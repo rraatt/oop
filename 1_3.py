@@ -21,6 +21,9 @@ def checker(inp):
 
 
 text = input()
+if not text:
+    print("No input detected!!!")
+    exit(1)
 if text[0].isnumeric():
     # Check if our first character is a number, as starting with operation is forbidden.
     cond = checker(text)
