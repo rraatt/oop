@@ -16,6 +16,11 @@ parser.add_argument('action', metavar='action', type=action_type, help='Define m
 parser.add_argument('values', metavar='N', type=str, nargs=2, help='Get two values to perform arithmetic operations')
 args = parser.parse_args()
 # Parse two arguments from the command line a string that defines function and a two member list of values.
+if args.action == "/":
+    if args.values[1] == "0":
+        print("Division by zero is forbidden!")
+        exit(1)
+# Check for division by zero.
 equation = args.values
 equation.insert(1, args.action)
 print(eval(' '.join(equation)))
